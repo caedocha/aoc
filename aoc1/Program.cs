@@ -15,21 +15,21 @@ void Challenge1()
       {
         if(line != "")
         {
-	  counter += int.Parse(line);
+	        counter += int.Parse(line);
         }
         else
         {
           if(counter > maxCounter)
-	  {
+	        {
             maxCounter = counter;
-	  }
-        counter = 0;
+	        }
+          counter = 0;
         }
       }
     }
   }
 
-  Console.WriteLine($"maxCounter: {maxCounter}");
+  Console.WriteLine($"Challenge 1 maxCounter: {maxCounter}");
 }
 
 void Challenge2()
@@ -45,28 +45,15 @@ void Challenge2()
       {
         if(line != "")
         {
-	  counter += int.Parse(line);
+	        counter += int.Parse(line);
         }
         else
         {
-	  counterSums.Add(counter);
+          counterSums.Add(counter);
           counter = 0;
         }
       }
     }
-  }
-
-  Console.WriteLine("--------------- Before");
-  foreach(var c in counterSums)
-  {
-    Console.WriteLine(c);
-  }
-  counterSums = counterSums.OrderByDescending(i => i).ToList();
-  
-  Console.WriteLine("--------------- After");
-  foreach(var c in counterSums)
-  {
-    Console.WriteLine(c);
   }
 
   var top3Counters = counterSums.GetRange(0, 3); 
@@ -76,8 +63,8 @@ void Challenge2()
     maxCounter += counter;
   }
 
-  Console.WriteLine($"maxCounter: {maxCounter}");
+  Console.WriteLine($"Challenge 2 maxCounter: {maxCounter}");
 }
 
-// Challenge1();
+Challenge1();
 Challenge2();
